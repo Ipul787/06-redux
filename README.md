@@ -24,17 +24,73 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Practicum Report
 
-To learn more about Next.js, take a look at the following resources:
+|  | Framework Based Programming 2024 |
+|--|--|
+| NIM |  2141720067|
+| Nama |  Saefulloh Fatah Putra Kyranna |
+| Kelas | TI - 3I |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Practicum 1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+In this practicum, we will install Redux and Bootstrap and implement it in our website. Once we install Bootstrap, we will import it and implement it in our website. 
 
-## Deploy on Vercel
+![Screenshot](assets/01.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When the button is clicked, a pop-up window will appear
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Screenshot](assets/02.png)
+
+## Practicum 2
+
+In this practicum, we will implement login functionality using Redux. To do this, we have to create multiple files and a login page. Based on the provided code in the Codelabs, there are some error when opening login page, but this could be remedied by adding Provider in the _app.tsx file. 
+
+`_app.tsx`
+
+```bash
+import { Provider } from 'react-redux';
+import { store } from '../redux/store/store';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { useEffect } from "react";
+
+function myApp({ Component, pageProps }: AppProps){
+  useEffect(() =>{
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
+  return (
+  <Provider store={store}>
+    <Component {...pageProps} />
+  </Provider>
+  );
+}
+
+export default myApp;
+```
+
+1. With these fixes, the output will look like this. 
+
+`Login`
+
+![Screenshot](assets/03.png)
+
+`Logout`
+
+![Screenshot](assets/04.png)
+
+The output is the different state the website is in after navigating to the page. When we press the button, the button will do the `handleAuth` function and alternates between Login and Logout state. 
+
+2. In line 25 and 30, there is a parse function as follows: 
+
+```bash
+parse('<div class="alert alert-success">Yay, berhasil login!!!</div>'),
+```
+
+```bash
+parse('<div class="alert alert-dark">Anda telah logout</div>'),
+```
+
+This is done to render those elements as JSX elements with background. If we didn't add the `parse`, it will be rendered as normal HTML strings. 
