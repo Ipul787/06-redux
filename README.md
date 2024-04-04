@@ -137,15 +137,21 @@ Output:
 
 ![Screenshot](assets/07.png)
 
-## Questions and Answers
+## Practicum Questions
 
 1. What is the use of the following code `import { useEffect } from` `"react";` on `file pages/_app.tsx?` Explain!
 **Answer**: The use of the code is to perform data fetching in function components. In this case, the fetched data is the data containing configuration files for bootstrap so that we can implement it in the website. 
 2. If this file `file pages/_app.tsx` doesn't use `useEffect` (deleting row 3 and row 9-11), what will happen?
+**Answer**: If the `useEffect` is not implemented, then the program cannot run because the required bootstrap configuration data is not available due to the `useEffect` being deleted. Therefore, the program must run without `useEffect` or implement the `useEffect` first. 
 3. Why the HTML tagging for `class` in react/nextjs must be replaced with `className`?
+**Answer**: `className` is used instead of `class` because this is the JSX tag for `class` in HTML. If we don't use this tag, Next.js won't read our inline HTML code and thus would return an error. 
 4. Can store in nextjs can save many redux reducer? 
+**Answer**: Yes, we can store many redux reducer in `store.js`. They could be stored in the same function or in different ones. 
 5. Explain the use of `store.js` file!
+**Answer**: `store.js` file is used to manage the state with Redux by the use of multiple reducers. This is done so that every action by the user returns a different state and different display of the website. `store.js` can also be used for various other purposes, such as data persistence, shared logic via custom hooks, API integration, global variables and constants, and storing utility functions. 
 6. On the `pages/login.tsx` file, what is the meaning of the following code ?
 `const { isLogin } = useSelector((state) => state.auth);`
+**Answer**: The use of the following code is to retrieve the state the website is in, then alternate the state of the website whenever the user performs an action to change the state in the website. In this case, auth means authorize, so this function is made for Login/Logout process. 
 7. On the `pages/counter.tsx` file, what is the meaning of the following code ?
 `const {totalCounter} = useSelector((state) => state.counter);`
+**Answer**: The use of the following code is to retrieve the state the website is in, then alternate the state of the website whenever the user performs an action to change the state in the website. In this case, there is a counter on the state, so this will change the state of the counter based on the user's actions. 
