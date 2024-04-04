@@ -125,14 +125,14 @@ Once finished, we can then modify our store.js to include the Redux reducer and 
 
 Output: 
 
-# Initial State
+`Initial State`
 
 ![Screenshot](assets/05.png)
 
-# After Addition
+`After Addition`
 
 ![Screenshot](assets/06.png)
 
-# Performing Subtraction When the Counter is 0 
+`Performing Subtraction When the Counter is 0 `
 
 ![Screenshot](assets/07.png)
