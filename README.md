@@ -94,3 +94,45 @@ parse('<div class="alert alert-dark">Anda telah logout</div>'),
 ```
 
 This is done to render those elements as JSX elements with background. If we didn't add the `parse`, it will be rendered as normal HTML strings. 
+
+## Practicum 03
+
+In this practicum, we will implement a functionality called a counter as an implementation of how to manage state using Redux in Next.js. To do this, we must first need to create a slice called naikTurunSlice in Next.js. 
+
+```bash
+import { createSlice } from "@reduxjs/toolkit";
+
+export const naikTurunSlice = createSlice({
+    name: 'CounterNaikTurun', 
+    initialState: {
+        totalCounter: 0
+    }, 
+    reducers: {
+        tambahCounter(state){
+            state.totalCounter += 1;
+        },
+        kurangCounter(state){
+            state.totalCounter -= 1;
+        }
+    },
+});
+
+export const { tambahCounter, kurangCounter } = naikTurunSlice.actions;
+export default naikTurunSlice.reducer;
+```
+
+Once finished, we can then modify our store.js to include the Redux reducer and create a page to implement the counter. 
+
+Output: 
+
+# Initial State
+
+![Screenshot](assets/05.png)
+
+# After Addition
+
+![Screenshot](assets/06.png)
+
+# Performing Subtraction When the Counter is 0 
+
+![Screenshot](assets/07.png)
