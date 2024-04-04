@@ -136,3 +136,16 @@ Output:
 `Performing Subtraction When the Counter is 0 `
 
 ![Screenshot](assets/07.png)
+
+## Questions and Answers
+
+1. What is the use of the following code `import { useEffect } from` `"react";` on `file pages/_app.tsx?` Explain!
+**Answer**: The use of the code is to perform data fetching in function components. In this case, the fetched data is the data containing configuration files for bootstrap so that we can implement it in the website. 
+2. If this file `file pages/_app.tsx` doesn't use `useEffect` (deleting row 3 and row 9-11), what will happen?
+3. Why the HTML tagging for `class` in react/nextjs must be replaced with `className`?
+4. Can store in nextjs can save many redux reducer? 
+5. Explain the use of `store.js` file!
+6. On the `pages/login.tsx` file, what is the meaning of the following code ?
+`const { isLogin } = useSelector((state) => state.auth);`
+7. On the `pages/counter.tsx` file, what is the meaning of the following code ?
+`const {totalCounter} = useSelector((state) => state.counter);`
